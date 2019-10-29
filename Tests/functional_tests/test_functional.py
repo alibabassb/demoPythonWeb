@@ -19,7 +19,7 @@ class FunctionalTests(unittest.TestCase):
 	"""
 	def test_selenium(self):
 		try:
-			webAppUrl = "http://zjpythonweb01.azurewebsites.net"
+			webAppUrl = pytest.config.getoption('webAppUrl')
 			response = self.driver.get(webAppUrl)
 			title = self.driver.title
 			self.assertIn("Home Page - Python Django Application", title)
