@@ -3,7 +3,6 @@ from selenium import webdriver
 import unittest
 import os
 import sys
-import pytest
 
 class FunctionalTests(unittest.TestCase):
 
@@ -20,7 +19,7 @@ class FunctionalTests(unittest.TestCase):
 	"""
 	def test_selenium(self):
 		try:
-			webAppUrl = pytest.config.getoption('webAppUrl')
+			webAppUrl = "http://zjpythonweb01.azurewebsites.net"
 			response = self.driver.get(webAppUrl)
 			title = self.driver.title
 			self.assertIn("Home Page - Python Django Application", title)
